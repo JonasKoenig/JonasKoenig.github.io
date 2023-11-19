@@ -1,5 +1,7 @@
-import { Avatar, Box, IconButton, Tooltip } from "@mui/material"
+import { Avatar, Box, IconButton, Tooltip, Typography } from "@mui/material"
 import { ReactElement } from "react"
+import Panel from "./Panel"
+import { t } from "i18next"
 
 const techs = {
     Typescript: {
@@ -12,7 +14,7 @@ const techs = {
     }
 }
 
-const TechGallery = (): ReactElement => {
+const Skills = (): ReactElement => {
     const techButtons = Object.entries(techs).map(([name, { icon, url }]) => {
         return (
             <Tooltip title={name} key={`tech_${name}`}>
@@ -22,7 +24,12 @@ const TechGallery = (): ReactElement => {
             </Tooltip>
         )
     })
-    return <Box>{...techButtons}</Box>;
+    return (
+        <Panel title={t('exp.title')}>
+            <Typography>{t('exp.content')}</Typography>
+            <Box>{...techButtons}</Box>
+        </Panel>
+    )
 }
 
-export default TechGallery
+export default Skills
