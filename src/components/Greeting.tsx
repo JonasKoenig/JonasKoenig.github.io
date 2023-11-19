@@ -1,14 +1,15 @@
 import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, IconButton, Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import SettingsIcon from '@mui/icons-material/Settings';
 
 const Greeting = (): ReactElement => {
-    const { t, i18n } = useTranslation();
+    // const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
-    const setLang = (lang: 'en' | 'de') => {
-        i18n.changeLanguage(lang);
-    }
+    // const setLang = (lang: 'en' | 'de') => {
+    //     i18n.changeLanguage(lang);
+    // }
 
     return (
         <div id="greeting">
