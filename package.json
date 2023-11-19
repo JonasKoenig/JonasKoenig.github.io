@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "vite",
@@ -24,8 +24,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-router": "^6.19.0",
-    "react-router-dom": "^6.19.0",
-    "three": "^0.156.1"
+    "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

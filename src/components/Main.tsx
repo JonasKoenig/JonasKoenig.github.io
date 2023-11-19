@@ -43,7 +43,7 @@ const theme = createTheme({
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <App />,
   },
 ]);
