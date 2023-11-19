@@ -1,0 +1,15 @@
+{
+    "translation": {
+        "greeting": "Hello World!",
+        "controls": {
+            "title": "Controls"
+        },
+        "exp": {
+            "title": "Experience",
+            "content": "I have professional experience in TypeScript, React and many accompanying front-end development technologies. During my studies in computer science, I learned popular programming language such as Java and Python. But I also got to shift my perspective learning more niche technologies like Haskell."
+        },
+        "cv": {
+            "title": "Curriculum Vitae"
+        }
+    }
+}

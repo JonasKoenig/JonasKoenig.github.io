@@ -1,0 +1,12 @@
+{
+    "translation": {
+        "greeting": "Hallo Welt!",
+        "controls": {
+            "title": "Einstellungen"
+        },
+        "exp": {
+            "title": "Erfahrung",
+            "content": "TypeScript und React"
+        }
+    }
+}
