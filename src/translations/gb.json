@@ -18,7 +18,10 @@
             "header": "Settings",
             "tab": "Settings",
             "appearance": "Appearance",
-            "lang": "Choose your language"
+            "lang": "Choose a language",
+            "gameText": "",
+            "gameReset": "Reset board",
+            "addQueens": "Add more queens (experimental)"
         }
     }
 }

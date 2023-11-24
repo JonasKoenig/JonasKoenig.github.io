@@ -3,7 +3,7 @@ import { Tabs, Tab, TabOwnProps, Box, Theme, useMediaQuery, Typography, Typograp
 import { useUrlState } from '../core/State';
 
 const Header = ({label, ...props}: {label: string} & TypographyOwnProps) => (
-    <Typography variant="h1" fontWeight={700} align="center" {...props}>
+    <Typography variant="h1" fontWeight={650} align="center" sx={{ marginBottom: '-2px' }} {...props}>
         {label}
     </Typography>
 );

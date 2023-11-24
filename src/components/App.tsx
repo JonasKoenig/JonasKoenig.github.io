@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import PanToolAltOutlinedIcon from '@mui/icons-material/PanToolAltOutlined';
+import PersonIcon from '@mui/icons-material/Person';
+import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import Nav from './Nav';
@@ -8,27 +8,29 @@ import Skills from './about/Skills';
 import CV from './about/CV';
 import Chess from './game/Chess';
 import Language from './settings/Language';
+import Game from './settings/GameSettings';
 
 const App = observer(() => {
     // const { feature } = useApp();
     const tabs = {
         about: {
-            icon: <InfoOutlinedIcon />,
+            icon: <PersonIcon />,
             content: [
                 <Skills key="skills" />, 
-                <CV key="cv"/>
+                <CV key="cv" />,
             ]
         }, 
         game: {
-            icon: <PanToolAltOutlinedIcon />,
+            icon: <PanToolAltIcon />,
             content: [
-                <Chess key="chess" />
+                <Chess key="chess" />,
             ]
         }, 
         settings: {
             icon: <SettingsIcon />,
             content: [
-                <Language key="lang"/>
+                <Language key="lang" />,
+                <Game key="game" />,
             ]
         },
     };

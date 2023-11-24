@@ -1,0 +1,27 @@
+{
+    "translation": {
+        "about": {
+            "header": "Jonas König",
+            "tab": "O mně",
+            "exp": "Zkušenosti",
+            "expText": "Mám profesionální zkušenosti s TypeScriptem, Reactem a mnoha dalšími technologiemi pro vývoj front-endu. Během studia informatiky jsem se naučil populární programovací jazyky, jako je Java a Python. Musel jsem ale také posunout svůj pohled na učení více výklenkových technologií, jako je Haskell.",
+            "cv": "Vzdělávání & C.V.",
+            "cs": "Informatiky",
+            "bufdi": "Dobrovolná služba",
+            "today": "dnes"
+        },
+        "game": {
+            "header": "Šachy",
+            "tab": "Přehrát"
+        },
+        "settings": {
+            "header": "Nastavení",
+            "tab": "Nastavení",
+            "appearance": "Vzhled",
+            "lang": "Výběr jazyka",
+            "gameText": "",
+            "gameReset": "Resetovací Šachovnice",
+            "addQueens": "Přidat další královny (experimentální)"
+        }
+    }
+}

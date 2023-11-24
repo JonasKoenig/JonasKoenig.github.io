@@ -18,7 +18,10 @@
             "header": "Einstellungen",
             "tab": "Einstellungen",
             "appearance": "Erscheinung",
-            "lang": "Sprachauswahl"
+            "lang": "Sprachauswahl",
+            "gameText": "Das Schach Spiel hat einige Limitationen.",
+            "gameReset": "Brett zurücksetzen",
+            "addQueens": "Mehr Damen hinzufügen (experimentell)"
         }
     }
 }

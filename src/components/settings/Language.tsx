@@ -7,6 +7,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 const langs = [
     { value: 'gb', label: 'English' },
     { value: 'de', label: 'Deutsch' },
+    { value: 'cz', label: 'Česky' },
 ]
 
 export const Language = () => {
@@ -15,21 +16,30 @@ export const Language = () => {
 
     const setLang = (l: string) => { i18n.changeLanguage(l); setUrlLang(l); };
     const langOpts = langs.map(({value, label}) => {
-        const sx = { border: value === lang ? '1px solid #FFEB3B' : 'none' }
+        const flag = <span className={`fi fi-${value}`} />;
         return (
-            <Button onClick={() => setLang(value)} sx={sx} key={`lang-option-${value}`}>
-                <span className={`fi fi-${value}`} style={{ marginRight: '4px' }} />
-                <Typography>{label}</Typography>
+            <Button 
+                variant="outlined" 
+                disabled={value === lang} 
+                onClick={() => setLang(value)} 
+                startIcon={flag} 
+                key={`lang-option-${value}`}
+            >
+                {label}
             </Button>
         );
     });
     return (
+        <>
         <Panel title={t('settings.appearance')}>
             {[
                 <Typography key="lang-options-header">{t('settings.lang')}</Typography>,
                 ...langOpts,
             ]}
         </Panel>
+        
+        
+        </>
     );
 }
 

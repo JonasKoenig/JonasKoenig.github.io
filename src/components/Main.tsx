@@ -9,6 +9,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import * as gb from '../translations/gb.json'
 import * as de from '../translations/de.json'
+import * as cz from '../translations/cz.json'
 
 const theme = createTheme({
   palette: {
@@ -22,6 +23,9 @@ const theme = createTheme({
     text: {
       primary: '#fff'
     },
+    action: {
+      disabled: '#fff'
+    }
   },
   components: {
     MuiPaper: {
@@ -48,6 +52,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          color: 'white',
           textTransform: 'none',
         }
       }
@@ -71,7 +76,7 @@ const router = createBrowserRouter([
 i18n.use(initReactI18next).init({
   lng: localStorage.getItem('language') ?? "gb",
   fallbackLng: "gb",
-  resources: { gb, de },
+  resources: { gb, de, cz },
   interpolation: { escapeValue: false }
 });
 
