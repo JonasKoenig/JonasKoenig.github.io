@@ -7,6 +7,8 @@ import { useUrlState } from "../../core/State";
 
 export const initialFen = 'rnbqkbnrpppppppp................................PPPPPPPPRNBQKBNR'
 
+const sameCase = (a: string, b: string) => (a === a.toUpperCase()) === (b === b.toUpperCase());
+
 const validateFen = (fen: string) => {
     let cleanFen = '';
     for (let i = 0; i < 64; i++) {
@@ -33,7 +35,9 @@ const Chess = (): ReactElement => {
     const handleDragEnd = (event: DragEndEvent) => {
         const { over, active } = event;
         if (!over) return;
+        const capturedPiece = fen[Number(over.id)]
         const [index, piece] = (active.id as string).split('-')
+        if (sameCase(piece, capturedPiece)) return;
         const clearOldSquare = `${fen.slice(0, Number(index))}.${fen.slice(Number(index) + 1)}`
         const insertNewSquare = `${clearOldSquare.slice(0, Number(over.id))}${piece}${clearOldSquare.slice(Number(over.id) + 1)}`
         setFen(insertNewSquare);
