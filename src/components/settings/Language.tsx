@@ -11,7 +11,7 @@ const langs = [
 
 export const Language = () => {
     const { i18n, t } = useTranslation();
-    const [lang, setUrlLang] = usePersistentState('language', 'en');
+    const [lang, setUrlLang] = usePersistentState('language', 'gb');
 
     const setLang = (l: string) => { i18n.changeLanguage(l); setUrlLang(l); };
     const langOpts = langs.map(({value, label}) => {
