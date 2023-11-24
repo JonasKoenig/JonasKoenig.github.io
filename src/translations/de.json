@@ -7,11 +7,11 @@
             "expText": "Ich habe berufliche Erfahrung im Umgang mit TypeScript, React und vielen begleitenden Frontend Technologien. Während meines Studiums habe ich weit-verbreitete Programmiersprachen wie Java und Python gelernt. Aber, ich hatte auch Gelegenheit durch außergewöhnliche Technologien, wie Haskell, neue Perspektiven zu sehen.",
             "cv": "Lebenslauf",
             "cs": "Informatik",
-            "bufdi": "Bundesfreiwilligendienst",
+            "bufdi": "BufDi",
             "today": "heute"
         },
         "game": {
-            "header": "",
+            "header": "Schach",
             "tab": "Spielen"
         },
         "settings": {

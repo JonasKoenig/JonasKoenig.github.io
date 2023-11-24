@@ -11,7 +11,7 @@
             "today": "today"
         },
         "game": {
-            "header": "",
+            "header": "Chess",
             "tab": "Play"
         },
         "settings": {
