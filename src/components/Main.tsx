@@ -17,7 +17,7 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     background: {
-      paper: '#00000040'
+      paper: '#00000050'
     },
     text: {
       primary: '#fff'
@@ -27,8 +27,18 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
+          borderRadius: '6px',
           padding: '2px 8px',
           marginBottom: 8
+        }
+      }
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          color: 'white',
+          padding: 0,
+          minHeight: '48px',
         }
       }
     }
@@ -38,7 +48,7 @@ const theme = createTheme({
     allVariants: {
       color: '#fff'
     }
-  }
+  },
 });
 
 const router = createBrowserRouter([
@@ -49,7 +59,7 @@ const router = createBrowserRouter([
 ]);
 
 i18n.use(initReactI18next).init({
-  lng: "en",
+  lng: localStorage.getItem('language') ?? "en",
   fallbackLng: "en",
   resources: { en, de },
   interpolation: { escapeValue: false }

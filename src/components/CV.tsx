@@ -6,7 +6,7 @@ import { t } from "i18next";
 
 const CV = (): ReactElement => {
     return (
-        <Panel title={t('cv.title')}>
+        <Panel title={t('about.cv')}>
         <Timeline position="alternate">
             <TimelineItem>
                 <TimelineOppositeContent>

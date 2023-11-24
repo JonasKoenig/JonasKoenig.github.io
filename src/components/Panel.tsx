@@ -9,7 +9,7 @@ type PanelProps = {
 
 const Panel = ({ title, children, sx }: PanelProps): ReactElement => {
     return (
-        <Paper sx={sx}>
+        <Paper elevation={0} sx={sx}>
             {title ? <Typography variant="h5" fontWeight={500}>{title}</Typography> : null}
             {children}
         </Paper>

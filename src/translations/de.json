@@ -1,12 +1,20 @@
 {
     "translation": {
-        "greeting": "Hallo Welt!",
-        "controls": {
-            "title": "Einstellungen"
+        "about": {
+            "header": "Hallo Welt!",
+            "tab": "Über mich",
+            "exp": "Erfahrung",
+            "expText": "TypeScript und React",
+            "cv": "Lebenslauf"
         },
-        "exp": {
-            "title": "Erfahrung",
-            "content": "TypeScript und React"
+        "game": {
+            "header": "",
+            "tab": "Spielen"
+        },
+        "settings": {
+            "header": "Einstellungen",
+            "tab": "Einstellungen",
+            "lang": "Sprache"
         }
     }
 }

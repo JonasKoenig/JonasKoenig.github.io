@@ -5,7 +5,7 @@ const JumpTo = () => {
     const onClick = () => document.getElementById('greeting')?.scrollIntoView({ behavior: 'smooth' });
     return (
         <div className="jumpTo">
-            <IconButton onClick={onClick} size="large" sx={{ backgroundColor: '#00000040' }}>
+            <IconButton onClick={onClick} sx={{ backgroundColor: '#00000040' }}>
                 <ArrowDownwardIcon htmlColor="white" />
             </IconButton>
         </div>

@@ -1,4 +1,4 @@
-import { Avatar, Box, IconButton, Tooltip, Typography } from "@mui/material"
+import { Avatar, IconButton, Tooltip, Typography } from "@mui/material"
 import { ReactElement } from "react"
 import Panel from "./Panel"
 import { t } from "i18next"
@@ -25,9 +25,9 @@ const Skills = (): ReactElement => {
         )
     })
     return (
-        <Panel title={t('exp.title')}>
-            <Typography>{t('exp.content')}</Typography>
-            <Box>{...techButtons}</Box>
+        <Panel title={t('about.exp')}>
+            <Typography>{t('about.expText')}</Typography>
+            <div className="skillIcons">{...techButtons}</div>
         </Panel>
     )
 }

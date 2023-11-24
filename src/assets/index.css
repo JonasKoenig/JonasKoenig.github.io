@@ -8,19 +8,39 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --lightBG: rgb(91, 82, 82);
+}
+
+html {
+  height: 100%;
 }
 
 body {
   margin: 0;
   display: flex;
+  height: 100%;
   width: 100%;
-  background-color: rgb(91, 82, 82);
+  background-color: var(--lightBG);
 }
 
 #root {
   max-width: 600px;
-  margin: 15px auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  height: 100%;
+}
+
+.navContent {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.skillIcons {
+  display: flex;
+  justify-content: center;
 }
 
 .jumpTo {
@@ -45,7 +65,7 @@ body {
 }
 
 .square.white {
-  background-color: #FFFFFF4A;
+  background-color: var(--lightBG);
 }
 
 .square.highlight {
@@ -58,10 +78,5 @@ body {
   background: none;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 5px;
-}
-
-.piece.grounded {
-  align-items: center;
-  justify-content: center;
+  margin: 2px;
 }
