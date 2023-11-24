@@ -1,7 +1,7 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { Avatar, Typography } from "@mui/material";
 import { ReactElement } from "react";
-import Panel from "./Panel";
+import Panel from "../Panel";
 import { t } from "i18next";
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';

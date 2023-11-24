@@ -2,8 +2,8 @@ import { ReactElement } from "react";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import Square from "./ChessSquare";
 import Piece from "./ChessPiece";
-import Panel from "./Panel";
-import { useUrlState } from "../core/State";
+import Panel from "../Panel";
+import { useUrlState } from "../../core/State";
 
 const validateFen = (fen: string) => {
     let cleanFen = '';

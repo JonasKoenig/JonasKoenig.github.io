@@ -4,10 +4,10 @@ import PanToolAltOutlinedIcon from '@mui/icons-material/PanToolAltOutlined';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import Nav from './Nav';
-import Skills from './Skills';
-import CV from './CV';
-import Chess from './Chess';
-import Language from './Settings';
+import Skills from './about/Skills';
+import CV from './about/CV';
+import Chess from './game/Chess';
+import Language from './settings/Language';
 
 const App = observer(() => {
     // const { feature } = useApp();

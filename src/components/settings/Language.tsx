@@ -1,7 +1,7 @@
 import { Radio, RadioGroup, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import Panel from "./Panel";
-import { usePersistentState } from "../core/State";
+import Panel from "../Panel";
+import { usePersistentState } from "../../core/State";
 
 type LaguageOptionProps = { value: string, label: string, current: string }
 

@@ -29,7 +29,9 @@ const theme = createTheme({
         root: {
           borderRadius: '6px',
           padding: '2px 8px',
-          marginBottom: 8
+          marginLeft: 2,
+          marginRight: 2,
+          marginBottom: 8,
         }
       }
     },
