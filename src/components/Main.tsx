@@ -7,7 +7,7 @@ import { AppContext, AppStore } from '../core/AppStore.ts';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import * as en from '../translations/en.json'
+import * as gb from '../translations/gb.json'
 import * as de from '../translations/de.json'
 
 const theme = createTheme({
@@ -41,6 +41,14 @@ const theme = createTheme({
           color: 'white',
           padding: 0,
           minHeight: '48px',
+          textTransform: 'none',
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
         }
       }
     }
@@ -61,9 +69,9 @@ const router = createBrowserRouter([
 ]);
 
 i18n.use(initReactI18next).init({
-  lng: localStorage.getItem('language') ?? "en",
-  fallbackLng: "en",
-  resources: { en, de },
+  lng: localStorage.getItem('language') ?? "gb",
+  fallbackLng: "gb",
+  resources: { gb, de },
   interpolation: { escapeValue: false }
 });
 

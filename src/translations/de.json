@@ -17,6 +17,7 @@
         "settings": {
             "header": "Einstellungen",
             "tab": "Einstellungen",
+            "appearance": "Erscheinung",
             "lang": "Sprachauswahl"
         }
     }

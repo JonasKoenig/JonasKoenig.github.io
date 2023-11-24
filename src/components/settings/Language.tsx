@@ -1,30 +1,34 @@
-import { Radio, RadioGroup, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Panel from "../Panel";
 import { usePersistentState } from "../../core/State";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
-type LaguageOptionProps = { value: string, label: string, current: string }
-
-const LanguageOption = ({value, label, current}: LaguageOptionProps) => {
-    return (
-        <Typography fontWeight={current === value ? 600 : "normal"}>
-            <Radio value={value} sx={{color: "white"}} size="small" />
-            {label}
-        </Typography>
-    );
-}
+const langs = [
+    { value: 'gb', label: 'English' },
+    { value: 'de', label: 'Deutsch' },
+]
 
 export const Language = () => {
     const { i18n, t } = useTranslation();
     const [lang, setUrlLang] = usePersistentState('language', 'en');
-    const setLang = (lang: string) => { i18n.changeLanguage(lang); setUrlLang(lang); };
+
+    const setLang = (l: string) => { i18n.changeLanguage(l); setUrlLang(l); };
+    const langOpts = langs.map(({value, label}) => {
+        const sx = { border: value === lang ? '1px solid #FFEB3B' : 'none' }
+        return (
+            <Button onClick={() => setLang(value)} sx={sx} key={`lang-option-${value}`}>
+                <span className={`fi fi-${value}`} style={{ marginRight: '4px' }} />
+                <Typography>{label}</Typography>
+            </Button>
+        );
+    });
     return (
-        <Panel title={t('settings.lang')}>
-            <RadioGroup value={lang} onChange={(_, v) => setLang(v)}>
-                {/* <Typography fontWeight={lang === en ? "bold" : "normal"}><Radio value="en"/>English</Typography> */}
-                <LanguageOption value="en" label="English" current={lang} />
-                <LanguageOption value="de" label="Deutsch" current={lang} />
-            </RadioGroup>
+        <Panel title={t('settings.appearance')}>
+            {[
+                <Typography key="lang-options-header">{t('settings.lang')}</Typography>,
+                ...langOpts,
+            ]}
         </Panel>
     );
 }

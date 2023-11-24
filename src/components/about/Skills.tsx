@@ -6,11 +6,11 @@ import { t } from "i18next"
 const techs = {
     Typescript: {
         icon: "tech/ts.svg",
-        url: ""
+        url: "https://www.typescriptlang.org/"
     },
     React: {
         icon: "tech/react.svg",
-        url: ""
+        url: "https://react.dev/"
     }
 }
 

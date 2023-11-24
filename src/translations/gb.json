@@ -17,6 +17,7 @@
         "settings": {
             "header": "Settings",
             "tab": "Settings",
+            "appearance": "Appearance",
             "lang": "Choose your language"
         }
     }
