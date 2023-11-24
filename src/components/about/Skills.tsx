@@ -3,6 +3,7 @@ import { ReactElement } from "react"
 import Panel from "../Panel"
 import { t } from "i18next"
 
+// icons: https://www.svgrepo.com/
 const techs = {
     Typescript: {
         icon: "tech/ts.svg",
@@ -11,7 +12,23 @@ const techs = {
     React: {
         icon: "tech/react.svg",
         url: "https://react.dev/"
-    }
+    },
+    Java: {
+        icon: "tech/java.svg",
+        url: "https://www.java.com/de/"
+    },
+    Python : {
+        icon: "tech/py.svg",
+        url: "https://www.python.org/",
+    },
+    Haskell : {
+        icon: "tech/hs.svg",
+        url: "https://www.haskell.org/",
+    },
+    Racket : {
+        icon: "tech/racket.svg",
+        url: "https://racket-lang.org/",
+    },
 }
 
 const Skills = (): ReactElement => {
