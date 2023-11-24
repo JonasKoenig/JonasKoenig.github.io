@@ -41,7 +41,7 @@ const Chess = (): ReactElement => {
 
     return (
         <DndContext onDragEnd={handleDragEnd}>
-            <Panel sx={{ padding: '8px' }}>
+            <Panel sx={{ padding: '8px', marginBottom: 0 }}>
                 <div className="board">
                     {squares}
                 </div>
