@@ -1,11 +1,14 @@
 {
     "translation": {
         "about": {
-            "header": "Hallo Welt!",
+            "header": "Jonas König",
             "tab": "Über mich",
             "exp": "Erfahrung",
-            "expText": "TypeScript und React",
-            "cv": "Lebenslauf"
+            "expText": "Ich habe berufliche Erfahrung im Umgang mit TypeScript, React und vielen begleitenden Frontend Technologien. Während meines Studiums habe ich weit-verbreitete Programmiersprachen wie Java und Python gelernt. Aber, ich hatte auch Gelegenheit durch außergewöhnliche Technologien, wie Haskell, neue Perspektiven zu sehen.",
+            "cv": "Lebenslauf",
+            "cs": "Informatik",
+            "bufdi": "Bundesfreiwilligendienst",
+            "today": "heute"
         },
         "game": {
             "header": "",
@@ -14,7 +17,7 @@
         "settings": {
             "header": "Einstellungen",
             "tab": "Einstellungen",
-            "lang": "Sprache"
+            "lang": "Sprachauswahl"
         }
     }
 }

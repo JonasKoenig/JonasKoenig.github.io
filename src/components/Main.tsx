@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import '../assets/index.css'
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
-import { AppContext, AppStore } from './AppStore.ts';
+import { AppContext, AppStore } from '../core/AppStore.ts';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";

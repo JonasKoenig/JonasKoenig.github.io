@@ -1,11 +1,14 @@
 {
     "translation": {
         "about": {
-            "header": "Hello World!",
+            "header": "Jonas König",
             "tab": "About",
             "exp": "Experience",
             "expText": "I have professional experience in TypeScript, React and many accompanying front-end development technologies. During my studies in computer science, I learned popular programming language such as Java and Python. But I also got to shift my perspective learning more niche technologies like Haskell.",
-            "cv": "CV"
+            "cv": "Education & C.V.",
+            "cs": "Computer Science",
+            "bufdi": "Volunteer Service",
+            "today": "today"
         },
         "game": {
             "header": "",
@@ -14,7 +17,7 @@
         "settings": {
             "header": "Settings",
             "tab": "Settings",
-            "lang": "Language"
+            "lang": "Choose your language"
         }
     }
 }

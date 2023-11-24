@@ -1,5 +1,4 @@
 import { observer } from 'mobx-react'
-import { useTranslation } from 'react-i18next';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import PanToolAltOutlinedIcon from '@mui/icons-material/PanToolAltOutlined';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -12,27 +11,28 @@ import Language from './Settings';
 
 const App = observer(() => {
     // const { feature } = useApp();
-    const {t} = useTranslation();
-    
-    return (
-        <Nav tabs={{
-            about: {
-                icon: <InfoOutlinedIcon />,
-                label: t('about.title'),
-                content: [<Skills />, <CV />]
-            }, 
-            game: {
-                icon: <PanToolAltOutlinedIcon />,
-                label: t('game.title'), 
-                content: [<Chess />]
-            }, 
-            settings: {
-                icon: <SettingsIcon />,
-                label: t('settings.title'), 
-                content: [<Language />]
-            },
-        }} />
-    )
+    const tabs = {
+        about: {
+            icon: <InfoOutlinedIcon />,
+            content: [
+                <Skills key="skills" />, 
+                <CV key="cv"/>
+            ]
+        }, 
+        game: {
+            icon: <PanToolAltOutlinedIcon />,
+            content: [
+                <Chess key="chess" />
+            ]
+        }, 
+        settings: {
+            icon: <SettingsIcon />,
+            content: [
+                <Language key="lang"/>
+            ]
+        },
+    };
+    return <Nav tabs={tabs} />
 })
 
 export default App

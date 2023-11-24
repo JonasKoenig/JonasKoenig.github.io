@@ -16,17 +16,17 @@ const Nav = ({tabs}: NavProps) => {
     const [active, setActive] = useUrlState('p', 'game');
     const {t} = useTranslation();
     const isMobile = useMediaQuery((t: Theme) => t.breakpoints.down('sm'));
-    // const [active, setActive] = useState("game");
     const {content} = tabs[active];
+
     const navTabs = Object.entries(tabs).map(([name, {content, ...props}]) => {
         const l = isMobile ? undefined : t(`${name}.tab`)
         props.iconPosition = 'start';
-        return <Tab value={name} {...props} label={l} key={`navtab-${name}`} />
+        return <Tab value={name} {...props} label={l} key={`nav-tab-${name}`} />
     })
     return (
         <>
-            <Box className="navContent" key="navcontent">
-                <Header label={t(`${active}.header`)} />
+            <Box className="navContent" key="nav-content">
+                <Header label={t(`${active}.header`)} key="nav-header" />
                 {content}
             </Box>
             <Tabs 
@@ -34,7 +34,6 @@ const Nav = ({tabs}: NavProps) => {
                 onChange={(_, a) => setActive(a)}
                 variant='fullWidth'
                 TabIndicatorProps={{sx:{top:0}}}
-                
             >
                 {navTabs}
             </Tabs>
