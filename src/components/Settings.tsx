@@ -1,15 +1,7 @@
-import { Button, Menu, Radio, RadioGroup, Typography } from "@mui/material";
+import { Radio, RadioGroup, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { useSearchParams } from "react-router-dom";
 import Panel from "./Panel";
 import { usePersistentState } from "../core/State";
-
-// export const useLanguage = (): [string, (l: string) => void] => {
-//     const [searchParams, setSearchParams] = useSearchParams();
-//     const lang = searchParams.get('l') ?? 'en';
-//     const setLang = (l: string) => {searchParams.set('l', l), setSearchParams(searchParams)};
-//     return [lang, setLang];
-// }
 
 type LaguageOptionProps = { value: string, label: string, current: string }
 

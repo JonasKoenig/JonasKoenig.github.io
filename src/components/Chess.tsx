@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import Square from "./ChessSquare";
 import Piece from "./ChessPiece";
