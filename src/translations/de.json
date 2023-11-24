@@ -19,7 +19,7 @@
             "tab": "Einstellungen",
             "appearance": "Erscheinung",
             "lang": "Sprachauswahl",
-            "gameText": "Das Schach Spiel hat einige Limitationen.",
+            "gameText": "Der Zustand des Schachbretts wird in der URL gespeichert. Daher kannst du dein Brett mit Freund*innen teilen und sie sehen genau das, was du siehst.",
             "gameReset": "Brett zurücksetzen",
             "addQueens": "Mehr Damen hinzufügen (experimentell)"
         }

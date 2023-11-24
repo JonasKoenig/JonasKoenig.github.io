@@ -19,7 +19,7 @@
             "tab": "Nastavení",
             "appearance": "Vzhled",
             "lang": "Výběr jazyka",
-            "gameText": "",
+            "gameText": "Stav šachovnice je uložen v adrese URL. Proto můžete svou šachovnici sdílet s kamarádem a on uvidí přesně to, co vy.",
             "gameReset": "Resetovací Šachovnice",
             "addQueens": "Přidat další královny (experimentální)"
         }

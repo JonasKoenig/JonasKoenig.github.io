@@ -19,7 +19,7 @@
             "tab": "Settings",
             "appearance": "Appearance",
             "lang": "Choose a language",
-            "gameText": "",
+            "gameText": "The chess board's state is stored in the URL. Therefore you can share your board with a friend and they see exactly what you see.",
             "gameReset": "Reset board",
             "addQueens": "Add more queens (experimental)"
         }
