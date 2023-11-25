@@ -1,85 +1,65 @@
-import { indexToPosition, isFriendlyFire } from "./Validate";
+
+import { bishop, knight, pawnBlack, pawnWhite, rook } from "./Directions";
+import { indexToPosition, isFriendlyFire, positionToIndex } from "./Validate";
+
+type Mask = (props: {fen: string, index: number, pos: Position, piece: string}) => boolean[]
+export type Position = [number, number]
 
 export const squares = [...Array(64).keys()]
-const roughlyEquals = (a: number, b: number) => a === b - 1 || a === b || a === b + 1;
+const isOnBoard = (p: Position) => p.every((c) => c >= 0 && c <= 7)
 
-const pawnMask = (pawnIndex: number, isWhite: boolean) => {
-    const [pawnFile, pawnRank] = indexToPosition(pawnIndex);
-    const dir = isWhite ? -1 : 1
-    const moves = [pawnIndex, pawnIndex + dir * 8]
-    if ((isWhite && pawnRank === 6) || (!isWhite && pawnRank === 1)) moves.push(pawnIndex + dir * 16);
-    if ((isWhite && pawnFile < 7) || (!isWhite && pawnFile > 0)) moves.push(pawnIndex + dir * 7);
-    if ((isWhite && pawnFile > 0) || (!isWhite && pawnFile < 7)) moves.push(pawnIndex + dir * 9);
-    return squares.map((i) => moves.includes(i));
+const maskOr = (masks: boolean[][]) => squares.map((i) => masks.some((mask => mask[i])))
+
+const maskFromMoves = (moves: Position[]) => {
+    const mask = squares.map(() => false);
+    moves.map((p) => positionToIndex(p)).forEach(i => { mask[i] = true });
+    return mask
 }
 
-const knightMask = (knightIndex: number) => {
-    const [knightFile, knightRank] = indexToPosition(knightIndex);
-    const moves = [
-        [knightFile + 2, knightRank + 1],
-        [knightFile + 2, knightRank - 1],
-        [knightFile + 1, knightRank + 2],
-        [knightFile + 1, knightRank - 2],
-        [knightFile - 2, knightRank + 1],
-        [knightFile - 2, knightRank - 1],
-        [knightFile - 1, knightRank + 2],
-        [knightFile - 1, knightRank - 2],
-    ]
-    return squares.map((i) => {
-        const [file, rank] = indexToPosition(i)
-        return moves.some(([f, r]) => f === file && r === rank);
-    })
-}
-
-const bishopMask = (bishopIndex: number) => {
-    const [bishopFile, bishopRank] = indexToPosition(bishopIndex);
-    return squares.map((i) => {
-        const [file, rank] = indexToPosition(i)
-        return Math.abs(bishopFile - file) === Math.abs(bishopRank - rank)
-    })
-}
-
-const rookMask = (rookIndex: number) => {
-    const [rookFile, rookRank] = indexToPosition(rookIndex);
-    return squares.map((i) => {
-        const [file, rank] = indexToPosition(i)
-        return rookFile === file || rookRank === rank
-    })
-}
-
-const queenMask = (queenIndex: number) => {
-    const rook = rookMask(queenIndex);
-    const bishop = bishopMask(queenIndex);
-    return rook.map((r, i) => r || bishop[i])
-}
-
-const kingMask = (kingIndex: number) => {
-    const [kingFile, kingRank] = indexToPosition(kingIndex);
-    return squares.map((i) => {
-        const [file, rank] = indexToPosition(i)
-        return roughlyEquals(kingFile, file) && roughlyEquals(kingRank, rank)
-    })
-}
-
-const switchMask = (index: number, piece: string) => {
-    switch (piece.toLowerCase()) {
-        case 'p': return pawnMask(index, piece === piece.toUpperCase());
-        case 'n': return knightMask(index);
-        case 'b': return bishopMask(index);
-        case 'r': return rookMask(index);
-        case 'q': return queenMask(index);
-        case 'k': return kingMask(index);
-        default: return undefined
+const march = (fen: string, piece: string, [posF, posR]: Position, [dirF, dirR]: Position, limit=1) => {
+    const moves: Position[] = []
+    let squareAvailable = true
+    let step = 0
+    while (squareAvailable) {
+        step++;
+        if (step > limit) break
+        const [file, rank] = [posF + dirF * step, posR + dirR * step];
+        if (!isOnBoard([file, rank])) break
+        const occupant = fen[positionToIndex([file, rank])]
+        if (isFriendlyFire(piece, occupant)) break
+        moves.push([file, rank]);
+        squareAvailable = occupant === '.'
     }
-} 
+    return maskFromMoves(moves);
+}
 
-const getFriendlyMask = (fen: string, piece: string) => {
-    return fen.split('').map((c) => !isFriendlyFire(c, piece))
+const pawnMask: Mask = ({fen, pos, piece}) => {
+    const [forward, left, right] = piece === piece.toUpperCase() ? pawnWhite : pawnBlack
+    return maskOr([
+        march(fen, piece, pos, forward, pos[1] === 1 || pos[1] === 6 ? 2 : 1),
+        march(fen, piece, pos, left, 1),
+        march(fen, piece, pos, right, 1),
+    ])
+}
+const knightMask: Mask = ({fen, pos, piece}) => maskOr(knight.map((dir) => march(fen, piece, pos, dir, 1)))
+const bishopMask: Mask = ({fen, pos, piece}) => maskOr(bishop.map((dir) => march(fen, piece, pos, dir, 7)))
+const rookMask: Mask = ({fen, pos, piece}) => maskOr(rook.map((dir) => march(fen, piece, pos, dir, 7)))
+const queenMask: Mask = ({fen, pos, piece}) => maskOr([...bishop, ...rook].map((dir) => march(fen, piece, pos, dir, 7)))
+const kingMask: Mask = ({fen, pos, piece}) => maskOr([...bishop, ...rook].map((dir) => march(fen, piece, pos, dir, 1)))
+
+const switchMask: Mask = (props) => {
+    switch (props.piece.toLowerCase()) {
+        case 'p': return pawnMask(props)
+        case 'n': return knightMask(props)
+        case 'b': return bishopMask(props)
+        case 'r': return rookMask(props)
+        case 'q': return queenMask(props)
+        case 'k': return kingMask(props)
+        default: return squares.map(() => false)
+    }
 }
 
 export const pieceMask = (fen: string, index: number, piece: string) => {
-    const mask = switchMask(index, piece)
-    if (mask === undefined) return undefined
-    const filter = getFriendlyMask(fen, piece).map((b, i) => b && mask[i])
-    return filter
+    const pos = indexToPosition(index);
+    return switchMask({fen, index, pos, piece})
 }

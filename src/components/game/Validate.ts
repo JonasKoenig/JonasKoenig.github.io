@@ -1,6 +1,7 @@
 import { UniqueIdentifier } from "@dnd-kit/core"
+import { Position } from "./Mask"
 
-export const indexToPosition = (i: number) => [i % 8, (i - (i % 8)) / 8]
+export const indexToPosition = (i: number) => [i % 8, (i - (i % 8)) / 8] as Position
 export const positionToIndex = ([file, rank]: number[]) => file + 8 * rank
 
 export const initialFen = 'rnbqkbnrpppppppp................................PPPPPPPPRNBQKBNR'
