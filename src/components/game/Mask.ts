@@ -1,6 +1,6 @@
-import { indexToPosition } from "./Validate";
+import { indexToPosition, isFriendlyFire } from "./Validate";
 
-const squares = [...Array(64).keys()]
+export const squares = [...Array(64).keys()]
 const roughlyEquals = (a: number, b: number) => a === b - 1 || a === b || a === b + 1;
 
 const pawnMask = (pawnIndex: number, isWhite: boolean) => {
@@ -72,7 +72,14 @@ const switchMask = (index: number, piece: string) => {
         default: return undefined
     }
 } 
-export const getMask = (index: number, piece: string) => {
+
+const getFriendlyMask = (fen: string, piece: string) => {
+    return fen.split('').map((c) => !isFriendlyFire(c, piece))
+}
+
+export const pieceMask = (fen: string, index: number, piece: string) => {
     const mask = switchMask(index, piece)
-    return mask ? mask.map((b) => b ? '.' : ' ').join(''): undefined
+    if (mask === undefined) return undefined
+    const filter = getFriendlyMask(fen, piece).map((b, i) => b && mask[i])
+    return filter
 }

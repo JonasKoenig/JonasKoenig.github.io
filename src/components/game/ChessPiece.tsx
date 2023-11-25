@@ -28,13 +28,7 @@ const Piece = ({ char, index }: PieceProps): ReactElement | undefined => {
         transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : 'none',
     };
     const sqGrounded = transform ? 'mid-air' : 'grounded'
-
-
-    return (
-        <button ref={setNodeRef} {...listeners} {...attributes} style={style} className={`piece ${sqGrounded}`}>
-
-        </button>
-    );
+    return <button ref={setNodeRef} {...listeners} {...attributes} style={style} className={`piece ${sqGrounded}`} />
 }
 
 export default Piece;
