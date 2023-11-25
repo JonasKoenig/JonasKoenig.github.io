@@ -3,14 +3,8 @@ import { Button, Typography } from "@mui/material";
 import RefreshIcon from '@mui/icons-material/Refresh';
 import FemaleIcon from '@mui/icons-material/Female';
 import { useUrlState } from "../../core/State";
-import { initialFen } from "../game/Chess";
+import { addRandomQueens, initialFen } from "../game/Validate";
 import Panel from "../Panel";
-
-const addQueens = (fen: string) => {
-    const i = Math.floor(Math.random() * 64);
-    const queen = Math.random() >= 0.5 ? 'Q' : 'q'
-    return `${fen.slice(0, i)}${queen}${fen.slice(i + 1)}`
-};
 
 const Game = () => {
     const {t} = useTranslation();
@@ -21,7 +15,7 @@ const Game = () => {
             <Button variant="outlined" onClick={() => setFen(initialFen)} startIcon={<RefreshIcon />}>
                 {t('settings.gameReset')}
             </Button>
-            <Button variant="outlined" onClick={() => setFen(addQueens(fen))} startIcon={<FemaleIcon />}>
+            <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />}>
                 {t('settings.addQueens')}
             </Button>
         </Panel>

@@ -70,6 +70,10 @@ body {
 }
 
 .square.highlight {
+  border: 3px dashed #FFEB3B;
+}
+
+.square.mouseOver {
   border: 3px solid #FFEB3B;
 }
 
