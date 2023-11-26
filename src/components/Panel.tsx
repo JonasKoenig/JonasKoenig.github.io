@@ -1,15 +1,11 @@
-import { Paper, Typography } from "@mui/material";
+import { Paper, PaperProps, Typography } from "@mui/material";
 import { ReactElement } from "react";
 
-type PanelProps = {
-    title?: string,
-    children: ReactElement | ReactElement[],
-    sx?: {}
-}
+type PanelProps = { title?: string } & PaperProps
 
-const Panel = ({ title, children, sx }: PanelProps): ReactElement => {
+const Panel = ({ title, children, ...props }: PanelProps): ReactElement => {
     return (
-        <Paper elevation={0} sx={sx}>
+        <Paper elevation={0} {...props}>
             {title ? <Typography variant="h5" fontWeight={500}>{title}</Typography> : null}
             {children}
         </Paper>

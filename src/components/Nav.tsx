@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Tabs, Tab, TabOwnProps, Box, Theme, useMediaQuery, Typography, TypographyOwnProps } from '@mui/material';
 import { useUrlState } from '../core/State';
+import Chess from './game/Chess';
 
 const Header = ({label, ...props}: {label: string} & TypographyOwnProps) => (
     <Typography variant="h1" fontWeight={650} align="center" sx={{ marginBottom: '-2px' }} {...props}>
@@ -25,18 +26,28 @@ const Nav = ({tabs}: NavProps) => {
     })
     return (
         <>
-            <Box className="navContent" key="nav-content">
-                <Header label={t(`${active}.header`)} key="nav-header" />
-                {content}
+            <Box className="layer">
+                <Box className="layerContent">
+                    <Header label={t(`${active}.header`)} />
+                    {content}
+                </Box>
             </Box>
-            <Tabs 
-                value={active} 
-                onChange={(_, a) => setActive(a)}
-                variant='fullWidth'
-                TabIndicatorProps={{sx:{top:0}}}
-            >
-                {navTabs}
-            </Tabs>
+            <Box className="layer">
+                <Box className="layerContent">
+                    {/* <Chess key="chess" /> */}
+                </Box>
+            </Box>
+            <Box className='nav'>
+                <Tabs
+                    value={active} 
+                    onChange={(_, a) => setActive(a)}
+                    variant='fullWidth'
+                    sx={{ maxWidth: '600px', margin: 'auto' }}
+                    TabIndicatorProps={{sx:{top:0}}}
+                >
+                    {navTabs}
+                </Tabs>
+            </Box>
         </>    
     )
 }

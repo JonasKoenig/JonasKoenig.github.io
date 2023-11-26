@@ -6,7 +6,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Nav from './Nav';
 import Skills from './about/Skills';
 import CV from './about/CV';
-import Chess from './game/Chess';
 import Language from './settings/Language';
 import Game from './settings/GameSettings';
 
@@ -23,7 +22,7 @@ const App = observer(() => {
         game: {
             icon: <PanToolAltIcon />,
             content: [
-                <Chess key="chess" />,
+                // <Chess key="chess" />,
             ]
         }, 
         settings: {

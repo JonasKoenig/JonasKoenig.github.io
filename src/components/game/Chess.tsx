@@ -6,11 +6,13 @@ import Panel from "../Panel";
 import { useUrlState } from "../../core/State";
 import { initialFen, isFriendlyFire, idToPiece, validateFen } from "./Validate";
 import { pieceMask, squares } from "./Mask";
+import { IconButton } from "@mui/material";
 
 const Chess = (): ReactElement => {
     const [rawFen, setFen] = useUrlState('g', initialFen);
     const fen = validateFen(rawFen);
     const [mask, setMask] = useState<boolean[] | undefined>();
+    const [turned, setTurned] = useState(false);
 
     const board = squares.map((i) => {
         const isEvenFile = i % 2;
@@ -41,11 +43,12 @@ const Chess = (): ReactElement => {
 
     return (
         <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-            <Panel sx={{ padding: '8px', marginBottom: 0 }}>
+            <Panel sx={{ padding: '8px', marginBottom: 0, transition: 'transform 1s', maxWidth: '700px'}} className={turned ? 'turn' : undefined}>
                 <div className="board">
                     {board}
                 </div>
             </Panel>
+            <IconButton onClick={() => setTurned((p) => !p)}>??</IconButton>
         </DndContext>
     );
 }

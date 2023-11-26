@@ -35,8 +35,8 @@ const Skills = (): ReactElement => {
     const techButtons = Object.entries(techs).map(([name, { icon, url }]) => {
         return (
             <Tooltip title={name} key={`tech_${name}`}>
-                <IconButton onClick={() => window.open(url, '_blank')?.focus()}>
-                    <Avatar src={icon} variant="square" sx={{ width: 28, height: 28 }}></Avatar>
+                <IconButton  onClick={() => window.open(url, '_blank')?.focus()}>
+                    <Avatar src={icon} sx={{ backgroundColor: 'rgb(91, 82, 82)' }} imgProps={{style: {height: '24px', width: '24px'}}}/>
                 </IconButton>
             </Tooltip>
         )
