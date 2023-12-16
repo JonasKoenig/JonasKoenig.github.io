@@ -144,3 +144,9 @@ body {
   margin: 2px;
   cursor: grab;
 }
+
+.MuiButton-root.centered, .MuiIconButton-root.centered {
+  display: flex;
+  margin: 0 auto;
+  color: var(--highlight)
+}

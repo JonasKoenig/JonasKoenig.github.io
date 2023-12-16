@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, IconButton, TextField, Typography } from "@mui/material";
 import RefreshIcon from '@mui/icons-material/Refresh';
 import FemaleIcon from '@mui/icons-material/Female';
 import { useUrlState } from "../../core/State";
@@ -14,7 +14,7 @@ const Game = () => {
     return (
         <Panel title={t('game.header')}>
                 <Typography>{t('settings.gameText')}</Typography>
-                <Button variant="outlined" onClick={() => setFen(initialFen)} startIcon={<RefreshIcon />}>
+                <Button variant="outlined" onClick={() => setFen(initialFen)} startIcon={<RefreshIcon />} className="centered">
                     {t('settings.gameReset')}
                 </Button>
 
@@ -23,7 +23,7 @@ const Game = () => {
                 <TextField label={t('game.player2')} value={player2} onChange={({target}) => setPlayer2(target.value)} fullWidth />
             
                 <Typography sx={{ mt: 1 }}>{t('settings.queensText')}</Typography>
-                <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />}>
+                <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />} className="centered">
                     {t('settings.addQueens')}
                 </Button>
         </Panel>

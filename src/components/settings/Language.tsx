@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Panel from "../Panel";
 import { usePersistentState } from "../../core/State";
@@ -22,8 +22,10 @@ export const Language = () => {
                 variant="outlined" 
                 disabled={value === lang} 
                 onClick={() => setLang(value)} 
-                startIcon={flag} 
+                startIcon={flag}
+                fullWidth
                 key={`lang-option-${value}`}
+                className="centered"
             >
                 {label}
             </Button>
@@ -32,10 +34,8 @@ export const Language = () => {
     return (
         <>
         <Panel title={t('settings.appearance')}>
-            {[
-                <Typography key="lang-options-header">{t('settings.lang')}</Typography>,
-                ...langOpts,
-            ]}
+            <Typography key="lang-options-header">{t('settings.lang')}</Typography>
+            <Stack direction="row">{...langOpts}</Stack>
         </Panel>
         
         
