@@ -13,8 +13,8 @@
         "game": {
             "header": "Šachy",
             "tab": "Přehrát",
-            "player1": "Hráč bílé",
-            "player2": "Hráč černá"
+            "player1": "Hráč černá",
+            "player2": "Hráč bílé"
         },
         "settings": {
             "header": "Nastavení",

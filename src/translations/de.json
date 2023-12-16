@@ -13,8 +13,8 @@
         "game": {
             "header": "Schach",
             "tab": "Spielen",
-            "player1": "Spieler Weiß",
-            "player2": "Spieler Schwarz"
+            "player1": "Spieler Schwarz",
+            "player2": "Spieler Weiß"
         },
         "settings": {
             "header": "Einstellungen",
