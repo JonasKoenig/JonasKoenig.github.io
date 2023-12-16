@@ -29,7 +29,7 @@ const App = observer(() => {
         game: {
             icon: <PanToolAltIcon />,
             content: (
-                <Box className="contentBoard">
+                <Box className="content">
                     <Header label={t(`game.header`)} />
                     <Chess key='chess' />
                 </Box>

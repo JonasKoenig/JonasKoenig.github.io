@@ -75,6 +75,7 @@ body {
 }
 
 .nav > .MuiTabs-root {
+  background-color: var(--lightBG);
   color: white;
   padding: 0;
   min-height: 48px;
@@ -97,8 +98,6 @@ body {
 
 .MuiPaper-root.boardPanel {
   padding: 8px;
-  margin: auto;
-  transition: all 0.5s ease-out;
   flex-grow: 1;
   aspect-ratio: 1;
 }
