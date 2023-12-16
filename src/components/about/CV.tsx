@@ -8,7 +8,6 @@ import SchoolIcon from '@mui/icons-material/School';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const CV = (): ReactElement => {
-    const sx = { backgroundColor: 'rgb(91, 82, 82)' };
     const cv = [
         {
             icon: <WorkIcon />,
