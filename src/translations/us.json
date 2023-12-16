@@ -2,6 +2,9 @@
     "translation": {
         "about": {
             "header": "Jonas König",
+            "greeting": "Hi {{name}}!",
+            "greetingNoName": "Hello everyone!",
+            "greetingText": "I am Jonas and I created this website as a kind of digital business card. The chess board is just a bit of interactive fun. The chess pieces' positions are stored in the URL, so you can make a move and send the link to a friend.",
             "tab": "About",
             "exp": "Experience",
             "expText": "I have professional experience in TypeScript, React and many accompanying front-end development technologies. During my studies in computer science, I learned popular programming language such as Java and Python. But I also got to shift my perspective learning more niche technologies like Haskell.",
@@ -21,7 +24,7 @@
             "tab": "Settings",
             "appearance": "Appearance",
             "lang": "Choose a language",
-            "gameText": "The chess board's state is stored in the URL. Therefore you can share your board with a friend and they see exactly what you see.",
+            "gameText": "The chess pieces' positions are stored in the URL. Therefore you can share your board with a friend and they see exactly what you see.",
             "gameReset": "Reset board",
             "namesText": "If you like you can enter your and your friends name and they will be displayed next to the board.",
             "queensText": "Your game has been going on for a while? You can always add more queens at random.",

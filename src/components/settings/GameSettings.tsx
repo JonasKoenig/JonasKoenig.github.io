@@ -19,8 +19,8 @@ const Game = () => {
                 </Button>
 
                 <Typography sx={{ mt: 1 }}>{t('settings.namesText')}</Typography>
-                <TextField label={t('game.player1')} value={player1} onChange={({target}) => setPlayer1(target.value)} />
-                <TextField label={t('game.player2')} value={player2} onChange={({target}) => setPlayer2(target.value)} />
+                <TextField label={t('game.player1')} value={player1} onChange={({target}) => setPlayer1(target.value)} fullWidth />
+                <TextField label={t('game.player2')} value={player2} onChange={({target}) => setPlayer2(target.value)} fullWidth />
             
                 <Typography sx={{ mt: 1 }}>{t('settings.queensText')}</Typography>
                 <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />}>

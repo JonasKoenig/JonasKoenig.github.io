@@ -4,7 +4,7 @@ import { Header } from "../Nav";
 
 export const Player1 = () => {
     const {t} = useTranslation();
-    const [player1, _] = useUrlState('p1', '');
+    const [player1] = useUrlState('p1', '');
     if (player1 === '') return <Header label={t(`game.header`)} />
     return <Header variant='h3' label={player1} />
 }

@@ -2,6 +2,9 @@
     "translation": {
         "about": {
             "header": "Jonas König",
+            "greeting": "Ahoy {{name}}!",
+            "greetingNoName": "Dobrý den!",
+            "greetingText": "Jmenuji se Jonas a tyto webové stránky jsem vytvořil jako jakousi digitální vizitku. Šachovnice je jen taková interaktivní zábava. Pozice šachových figurek jsou uloženy v adrese URL, takže můžete provést tah a poslat odkaz kamarádovi.",
             "tab": "O mně",
             "exp": "Zkušenosti",
             "expText": "Mám profesionální zkušenosti s TypeScriptem, Reactem a mnoha dalšími technologiemi pro vývoj front-endu. Během studia informatiky jsem se naučil populární programovací jazyky, jako je Java a Python. Musel jsem ale také posunout svůj pohled na učení více výklenkových technologií, jako je Haskell.",
@@ -20,7 +23,7 @@
             "header": "Nastavení",
             "tab": "Nastavení",
             "appearance": "Vzhled",
-            "lang": "Výběr jazyka",
+            "lang": "Some of the Czech texts were translated using software. I apologize if there are any errors. Please let me know.",
             "gameText": "Stav šachovnice je uložen v adrese URL. Proto můžete svou šachovnici sdílet s kamarádem a on uvidí přesně to, co vy.",
             "gameReset": "Resetovací Šachovnice",
             "namesText": "Pokud chcete, můžete zadat své jméno a jméno svých přátel, které se zobrazí vedle tabule.",

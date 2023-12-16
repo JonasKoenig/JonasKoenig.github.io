@@ -55,8 +55,8 @@ const CV = (): ReactElement => {
         )
     });
     return (
-        <Panel title={t('about.cv')}>
-            <Timeline color="#848080">
+        <Panel title={t('about.cv')} style={{ paddingBottom: 0 }}>
+            <Timeline color="#848080" sx={{m: 0, p: 0}}>
                 {timelineNodes}
             </Timeline>
         </Panel>

@@ -12,6 +12,7 @@ import Language from './settings/Language';
 import Game from './settings/GameSettings';
 import Chess from './game/Chess';
 import { Player1, Player2 } from './game/ChessPlayer';
+import Greeting from './about/Greeting';
 
 const App = observer(() => {
     // const { feature } = useApp();
@@ -22,6 +23,7 @@ const App = observer(() => {
             content: (
                 <Box className="content">
                     <Header label={t(`about.header`)} />
+                    <Greeting key="greeting" />
                     <Skills key="skills" />
                     <CV key="cv" />
                 </Box>

@@ -42,7 +42,7 @@ const Skills = (): ReactElement => {
         )
     })
     return (
-        <Panel title={t('about.exp')}>
+        <Panel title={t('about.exp')} style={{ paddingBottom: 0 }}>
             <Typography>{t('about.expText')}</Typography>
             <div className="skillIcons">{...techButtons}</div>
         </Panel>
