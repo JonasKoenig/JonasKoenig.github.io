@@ -42,6 +42,13 @@ const theme = createTheme({
           textTransform: 'none',
         }
       }
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          marginTop: '10px'
+        }
+      }
     }
   },
   typography: {

@@ -12,7 +12,9 @@
         },
         "game": {
             "header": "Šachy",
-            "tab": "Přehrát"
+            "tab": "Přehrát",
+            "player1": "Hráč bílé",
+            "player2": "Hráč černá"
         },
         "settings": {
             "header": "Nastavení",
@@ -21,6 +23,8 @@
             "lang": "Výběr jazyka",
             "gameText": "Stav šachovnice je uložen v adrese URL. Proto můžete svou šachovnici sdílet s kamarádem a on uvidí přesně to, co vy.",
             "gameReset": "Resetovací Šachovnice",
+            "namesText": "Pokud chcete, můžete zadat své jméno a jméno svých přátel, které se zobrazí vedle tabule.",
+            "queensText": "Vaše hra už nějakou dobu pokračuje? Vždy můžete náhodně přidat další královny.",
             "addQueens": "Přidat další královny (experimentální)"
         }
     }

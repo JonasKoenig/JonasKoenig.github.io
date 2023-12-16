@@ -12,7 +12,9 @@
         },
         "game": {
             "header": "Schach",
-            "tab": "Spielen"
+            "tab": "Spielen",
+            "player1": "Spieler Weiß",
+            "player2": "Spieler Schwarz"
         },
         "settings": {
             "header": "Einstellungen",
@@ -21,6 +23,8 @@
             "lang": "Sprachauswahl",
             "gameText": "Der Zustand des Schachbretts wird in der URL gespeichert. Daher kannst du dein Brett mit Freund*innen teilen und sie sehen genau das, was du siehst.",
             "gameReset": "Brett zurücksetzen",
+            "namesText": "Wenn ihr mögt könnt ihr eure Namen eintragen, um sie am Schachbrett anzuzeigen.",
+            "queensText": "Die Partie zieht sich schon eine Weile? Ihr könntet zufällig mehr Damen hinzufügen.",
             "addQueens": "Mehr Damen hinzufügen (experimentell)"
         }
     }

@@ -1,7 +1,9 @@
 import { observer } from 'mobx-react'
+import { useTranslation } from 'react-i18next';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { Box } from '@mui/material';
 
 import Nav, { Header } from './Nav';
 import Skills from './about/Skills';
@@ -9,8 +11,7 @@ import CV from './about/CV';
 import Language from './settings/Language';
 import Game from './settings/GameSettings';
 import Chess from './game/Chess';
-import { Box } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+import { Player1, Player2 } from './game/ChessPlayer';
 
 const App = observer(() => {
     // const { feature } = useApp();
@@ -30,8 +31,9 @@ const App = observer(() => {
             icon: <PanToolAltIcon />,
             content: (
                 <Box className="content">
-                    <Header label={t(`game.header`)} />
+                    <Player1 />
                     <Chess key='chess' />
+                    <Player2 />
                 </Box>
             )
         }, 

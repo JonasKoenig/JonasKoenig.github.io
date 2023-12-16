@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import RefreshIcon from '@mui/icons-material/Refresh';
 import FemaleIcon from '@mui/icons-material/Female';
 import { useUrlState } from "../../core/State";
@@ -9,15 +9,23 @@ import Panel from "../Panel";
 const Game = () => {
     const {t} = useTranslation();
     const [fen, setFen] = useUrlState('g', initialFen);
+    const [player1, setPlayer1] = useUrlState('p1', '');
+    const [player2, setPlayer2] = useUrlState('p2', '');
     return (
         <Panel title={t('game.header')}>
-            <Typography>{t('settings.gameText')}</Typography>
-            <Button variant="outlined" onClick={() => setFen(initialFen)} startIcon={<RefreshIcon />}>
-                {t('settings.gameReset')}
-            </Button>
-            <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />}>
-                {t('settings.addQueens')}
-            </Button>
+                <Typography>{t('settings.gameText')}</Typography>
+                <Button variant="outlined" onClick={() => setFen(initialFen)} startIcon={<RefreshIcon />}>
+                    {t('settings.gameReset')}
+                </Button>
+
+                <Typography sx={{ mt: 1 }}>{t('settings.namesText')}</Typography>
+                <TextField label={t('game.player1')} value={player1} onChange={({target}) => setPlayer1(target.value)} />
+                <TextField label={t('game.player2')} value={player2} onChange={({target}) => setPlayer2(target.value)} />
+            
+                <Typography sx={{ mt: 1 }}>{t('settings.queensText')}</Typography>
+                <Button variant="outlined" onClick={() => setFen(addRandomQueens(fen))} startIcon={<FemaleIcon />}>
+                    {t('settings.addQueens')}
+                </Button>
         </Panel>
     )
 };

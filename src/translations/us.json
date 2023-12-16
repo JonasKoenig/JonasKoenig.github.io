@@ -12,7 +12,9 @@
         },
         "game": {
             "header": "Chess",
-            "tab": "Play"
+            "tab": "Play",
+            "player1": "Player black",
+            "player2": "Player white"
         },
         "settings": {
             "header": "Settings",
@@ -21,6 +23,8 @@
             "lang": "Choose a language",
             "gameText": "The chess board's state is stored in the URL. Therefore you can share your board with a friend and they see exactly what you see.",
             "gameReset": "Reset board",
+            "namesText": "If you like you can enter your and your friends name and they will be displayed next to the board.",
+            "queensText": "Your game has been going on for a while? You can always add more queens at random.",
             "addQueens": "Add more queens (experimental)"
         }
     }
