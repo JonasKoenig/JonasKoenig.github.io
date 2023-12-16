@@ -5,14 +5,14 @@ import { usePersistentState } from "../../core/State";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 const langs = [
-    { value: 'gb', label: 'English' },
+    { value: 'us', label: 'English' },
     { value: 'de', label: 'Deutsch' },
     { value: 'cz', label: 'Česky' },
 ]
 
 export const Language = () => {
     const { i18n, t } = useTranslation();
-    const [lang, setUrlLang] = usePersistentState('language', 'gb');
+    const [lang, setUrlLang] = usePersistentState('language', 'us');
 
     const setLang = (l: string) => { i18n.changeLanguage(l); setUrlLang(l); };
     const langOpts = langs.map(({value, label}) => {

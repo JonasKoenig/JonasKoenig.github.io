@@ -36,7 +36,7 @@ const Skills = (): ReactElement => {
         return (
             <Tooltip title={name} key={`tech_${name}`}>
                 <IconButton  onClick={() => window.open(url, '_blank')?.focus()}>
-                    <Avatar src={icon} sx={{ backgroundColor: 'rgb(91, 82, 82)' }} imgProps={{style: {height: '24px', width: '24px'}}}/>
+                    <Avatar src={icon} className="symbol" imgProps={{style: {height: '24px', width: '24px'}}}/>
                 </IconButton>
             </Tooltip>
         )

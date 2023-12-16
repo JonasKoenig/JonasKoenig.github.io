@@ -45,8 +45,8 @@ const CV = (): ReactElement => {
                     <Typography variant="caption">{node.location}</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <Avatar sx={sx}>{node.icon}</Avatar>
-                    {isLast ? null : <TimelineConnector sx={sx} />}
+                    <Avatar className="symbol">{node.icon}</Avatar>
+                    {isLast ? null : <TimelineConnector className="symbol" />}
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography>{node.occupation}</Typography>

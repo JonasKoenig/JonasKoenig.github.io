@@ -25,10 +25,9 @@ const Piece = ({ char, index }: PieceProps): ReactElement | undefined => {
     const color = char === c ? 'black' : 'white'
     const style = {
         backgroundImage: `url('pieces/${color}_${piece}.svg')`,
-        transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : 'none',
+        transform: transform ? `translate(${transform.x}px, ${transform.y}px)` : 'none',
     };
-    const sqGrounded = transform ? 'mid-air' : 'grounded'
-    return <button ref={setNodeRef} {...listeners} {...attributes} style={style} className={`piece ${sqGrounded}`} />
+    return <button ref={setNodeRef} {...listeners} {...attributes} style={style} className="piece" />
 }
 
 export default Piece;

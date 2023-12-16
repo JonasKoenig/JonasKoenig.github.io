@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import '../assets/index.css'
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
-import { AppContext, AppStore } from '../core/AppStore.ts';
+import { AppContext, AppStore } from '../core/Mobx.ts';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import * as gb from '../translations/gb.json'
+import * as us from '../translations/us.json'
 import * as de from '../translations/de.json'
 import * as cz from '../translations/cz.json'
 
@@ -17,9 +17,6 @@ const theme = createTheme({
       main: '#ffeb3b',
       contrastText: '#fff',
     },
-    background: {
-      paper: '#00000050'
-    },
     text: {
       primary: '#fff'
     },
@@ -28,17 +25,6 @@ const theme = createTheme({
     }
   },
   components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          borderRadius: '6px',
-          padding: '2px 8px',
-          marginLeft: 2,
-          marginRight: 2,
-          marginBottom: 8,
-        }
-      }
-    },
     MuiTab: {
       styleOverrides: {
         root: {
@@ -66,17 +52,10 @@ const theme = createTheme({
   },
 });
 
-const router = createBrowserRouter([
-  {
-    path: "",
-    element: <App />,
-  },
-]);
-
 i18n.use(initReactI18next).init({
-  lng: localStorage.getItem('language') ?? "gb",
-  fallbackLng: "gb",
-  resources: { gb, de, cz },
+  lng: localStorage.getItem('language') ?? "us",
+  fallbackLng: "us",
+  resources: { us, de, cz },
   interpolation: { escapeValue: false }
 });
 
@@ -84,7 +63,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <ThemeProvider theme={responsiveFontSizes(theme)}>
     <React.StrictMode>
       <AppContext.Provider value={AppStore.getInstance()}>
-        <RouterProvider router={router} />
+        <RouterProvider router={createBrowserRouter([{ path: "", element: <App /> } ])} />
       </AppContext.Provider>
     </React.StrictMode>
   </ThemeProvider>
