@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button, IconButton, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import RefreshIcon from '@mui/icons-material/Refresh';
 import FemaleIcon from '@mui/icons-material/Female';
 import { useUrlState } from "../../core/State";
