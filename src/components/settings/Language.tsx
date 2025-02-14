@@ -1,4 +1,4 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Panel from "../Panel";
 import { usePersistentState } from "../../core/State";
@@ -34,6 +34,7 @@ export const Language = () => {
     return (
         <>
         <Panel title={t('settings.lang')}>
+            <Typography>{t('settings.langText')}</Typography>
             <Stack direction="row" sx={{mt: 1}}>{...langOpts}</Stack>
         </Panel>
         
