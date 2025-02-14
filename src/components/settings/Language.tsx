@@ -33,9 +33,8 @@ export const Language = () => {
     });
     return (
         <>
-        <Panel title={t('settings.appearance')}>
-            <Typography key="lang-options-header">{t('settings.lang')}</Typography>
-            <Stack direction="row">{...langOpts}</Stack>
+        <Panel title={t('settings.lang')}>
+            <Stack direction="row" sx={{mt: 1}}>{...langOpts}</Stack>
         </Panel>
         
         

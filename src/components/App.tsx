@@ -11,7 +11,6 @@ import CV from './about/CV';
 import Language from './settings/Language';
 import Game from './settings/GameSettings';
 import Chess from './game/Chess';
-import { Player1, Player2 } from './game/ChessPlayer';
 import Greeting from './about/Greeting';
 
 const App = observer(() => {
@@ -33,9 +32,9 @@ const App = observer(() => {
             icon: <PanToolAltIcon />,
             content: (
                 <Box className="content">
-                    <Player1 />
+                    <Header label={t(`game.header`)} />
                     <Chess key='chess' />
-                    <Player2 />
+                    <Game key="game" />
                 </Box>
             )
         }, 
@@ -45,13 +44,13 @@ const App = observer(() => {
                 <Box className="content">
                     <Header label={t(`settings.header`)} />
                     <Language key="lang" />
-                    <Game key="game" />
+                    
                 </Box>
             )
             
         },
     };
-    return <Nav tabs={tabs} />
+    return <Nav tabs={tabs} />;
 })
 
 export default App

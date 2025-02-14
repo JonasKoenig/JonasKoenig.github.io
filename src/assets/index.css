@@ -150,3 +150,8 @@ body {
   margin: 0 auto;
   color: var(--highlight)
 }
+
+.MuiPaper-root.MuiAccordion-root {
+  background-color: transparent;
+  color: white;
+}
