@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Panel from "../Panel";
 import { usePersistentState } from "../../core/State";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import { useState } from "react";
 
 const langs = [
     { value: 'us', label: 'English' },
@@ -31,11 +32,31 @@ export const Language = () => {
             </Button>
         );
     });
+    const [resp, setResp] = useState('No.');
+    const fetchResp = async () => {
+        const response = await fetch('https://function-bun-production-1523.up.railway.app/api/health', {
+            method: "GET", 
+            headers: {                'Content-Type': 'application/json',}
+        });
+        const json = await response.json()
+        setResp(json.status)
+    }
     return (
         <>
         <Panel title={t('settings.lang')}>
             <Typography>{t('settings.langText')}</Typography>
             <Stack direction="row" sx={{mt: 1}}>{...langOpts}</Stack>
+
+            <Button 
+                variant="outlined"
+                onClick={fetchResp}
+                fullWidth
+                key={`resp`}
+                className="centered"
+            >
+                Fetch
+            </Button>
+            {resp}
         </Panel>
         
         
