@@ -4,7 +4,6 @@ app = Flask(__name__)
 import os
 import psycopg2
 
-print(DATABASE_URL)
 print(os.environ['DATABASE_URL'])
 
 conn = psycopg2.connect(
